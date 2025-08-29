@@ -56,7 +56,11 @@ Once Client-1 has been restarted, copy Client-1's Public IP address and "Remote 
 <img src="" height="80%" width="80%" alt="Deploying Active Directory"/>
 </p>
 <p>
-TEXT GOES HERE 
+Log onto dc-1 by retrieving its "Public IP Address". We are going to be installing "Active Directory Domain Services" by right-clicking the "Start" menu and selecting "Server Manager" and "Add Roles & Features" locating the option "Active Directory Domain Services" and clicking next until the option of "Install" is available. Once installed, head back into "Server Manager" and locate the option "Promote the server to a domain controller." Once opened, select the option "Add New Forest" and add the domain name "mydomain.com". And continue to click next until the option of "Install" is available. Once installed, the computer will restart, and you will need to relog into dc-1 a little differently than prior. **You will need to log in as mydomain.com\labuser** 
+<br /> 
+Once restarted and logged back into dc-1. From the "Start Menu" locate "Windows Administrative Tools" and select "Active Directory Users and Computers". From there, right-click the dropdown "mydomian.com" and select: New --> Organizational Unit. From here, we are going to create 2 new "Organizational Units" and name them "_EMPLOYEES" & "_ADMINS". **VERY IMPORTANT THAT THESE ARE SPELLED CORRECTLY**. Once these 2 have been created, we are going to create a new "User" named "Jane Doe". To do this, right-click in the "Admin" Window and select "New." Fill the info out like so. First Name = Jane, Last Name = Doe, User Login Name = jane_admin. Select Next and Make the "Password" Password123. Now we are going to make "Jane Doe" an Admin by "Right-Clicking" on Jane's name in the "_Admins" and selecting "Properties" and changing the "Members Of" to include "domain admin" **Selecting Check Names Will Locate Local Files**. Next, logout of dc-1 and re-login as the newly created "mydomain.com\jane_admin". 
+<br />
+ 
 </p>
 <br />
 
